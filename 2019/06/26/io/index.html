@@ -53,7 +53,7 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li  class=active >
+            <li >
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>HOME</span>
@@ -81,6 +81,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第七章-IO流"><span class="toc-text">第七章 IO流</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、流的概念"><span class="toc-text">一、流的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、流的分类"><span class="toc-text">二、流的分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、几种重要的流"><span class="toc-text">三、几种重要的流</span></a></li></ol></li></ol>
+</div>
+    
 </div>
 
 
@@ -105,69 +109,61 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-preview-container" style="min-height: 720px">
-    
-    <div class="post-preview">
-        <div class="post-time">2019-06-26</div>
-        <div class="post-info">
-            <a href="/2019/06/26/io/">
-                <h3>
-                    Untitled
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
+
+
+<div class="post-container">
+    <div class="post-title">
+        
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-06-26</div>
-        <div class="post-info">
-            <a href="/2019/06/26/thread/">
-                <h3>
-                    Untitled
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-06-26 23:41:26</span></span>
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-06-21</div>
-        <div class="post-info">
-            <a href="/2019/06/21/MyFirstBlog/">
-                <h3>
-                    Untitled
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-06-20</div>
-        <div class="post-info">
-            <a href="/2019/06/20/hello-world/">
-                <h3>
-                    Hello World
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-</div>
-<ul class="pager">
-    
-    
+    <div class="post-content ">
+        <h1 id="第七章-IO流"><a href="#第七章-IO流" class="headerlink" title="第七章 IO流"></a>第七章 IO流</h1><h2 id="一、流的概念"><a href="#一、流的概念" class="headerlink" title="一、流的概念"></a>一、流的概念</h2><ul>
+<li>Java中流是使用统一的方式操作输入和输出的数据。</li>
+<li>java.io包它对各种常见的输入流和输出流进行了抽象。<h2 id="二、流的分类"><a href="#二、流的分类" class="headerlink" title="二、流的分类"></a>二、流的分类</h2></li>
 </ul>
+<ol>
+<li>流操作的方向（参照物：当前程序）<ul>
+<li><strong>输入流</strong>：将数据读取到程序中。</li>
+<li><strong>输出流</strong>：将程序中的数据写出到文件中。</li>
+</ul>
+</li>
+<li>类操作的最小数据单元<ul>
+<li><strong>字节类</strong>：如果数据流中最小的数据单元是字节，那么称这种流为字节流。字节流处理单元为 1 个字节，可以操作字节和字节数组。</li>
+<li><strong>字符类</strong>：如果数据流中最小的数据单元是字符，那么称这种流为字符流。字符流处理的单元为 2 个字节的 Unicode 字符，可以操作字符、字符数组或字符串。Java内用Unicode 编码存储字符,字符流处理类负责将外部的其他编码的字符流和java内Unicode 字符流之间的转换。字符流（一次可以处理一个缓冲区）一次操作比字节流（一次一个字节）效率高。</li>
+</ul>
+</li>
+<li>流的角色<ul>
+<li><strong>字节流</strong>：处理实际数据源，上述四种都是属于字节流。如<em>FileInputStream</em>。</li>
+<li><strong>处理流/包装流</strong>:处理包装的流。如<em>BufferedInputStream</em>。<h2 id="三、几种重要的流"><a href="#三、几种重要的流" class="headerlink" title="三、几种重要的流"></a>三、几种重要的流</h2>FileInputStream fis = null;<br>FileOutputStream fos = null;</li>
+</ul>
+</li>
+<li>所有字节输入流和字节输出流的父类：<ul>
+<li>java.io.InputStream</li>
+<li>java.io.OutputStream</li>
+</ul>
+</li>
+<li>文件字节流:<br> FileInputStream fis = null;<br> FileOutputStream fos = null;</li>
+</ol>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
 
     </div>
 </div>
@@ -207,7 +203,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = ""
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
