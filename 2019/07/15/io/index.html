@@ -96,15 +96,16 @@
 
 
   <meta name="description" content="第七章 IO流一、流的概念 Java中流是使用统一的方式操作输入和输出的数据。 java.io包它对各种常见的输入流和输出流进行了抽象。二、流的分类   流操作的方向（参照物：当前程序） 输入流：将数据读取到程序中。 输出流：将程序中的数据写出到文件中。   类操作的最小数据单元 字节类：如果数据流中最小的数据单元是字节，那么称这种流为字节流。字节流处理单元为 1 个字节，可以操作字节和字节数组。">
+<meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2019/06/26/io/index.html">
+<meta property="og:title" content="IO流">
+<meta property="og:url" content="http://yoursite.com/2019/07/15/io/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="第七章 IO流一、流的概念 Java中流是使用统一的方式操作输入和输出的数据。 java.io包它对各种常见的输入流和输出流进行了抽象。二、流的分类   流操作的方向（参照物：当前程序） 输入流：将数据读取到程序中。 输出流：将程序中的数据写出到文件中。   类操作的最小数据单元 字节类：如果数据流中最小的数据单元是字节，那么称这种流为字节流。字节流处理单元为 1 个字节，可以操作字节和字节数组。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-26T16:40:29.400Z">
+<meta property="og:updated_time" content="2019-07-15T15:13:34.204Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="IO流">
 <meta name="twitter:description" content="第七章 IO流一、流的概念 Java中流是使用统一的方式操作输入和输出的数据。 java.io包它对各种常见的输入流和输出流进行了抽象。二、流的分类   流操作的方向（参照物：当前程序） 输入流：将数据读取到程序中。 输出流：将程序中的数据写出到文件中。   类操作的最小数据单元 字节类：如果数据流中最小的数据单元是字节，那么称这种流为字节流。字节流处理单元为 1 个字节，可以操作字节和字节数组。">
 
 
@@ -113,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/26/io/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/15/io/">
 
 
 
@@ -123,7 +124,7 @@
   };
 </script>
 
-  <title> | Hexo</title>
+  <title>IO流 | Hexo</title>
   
 
 
@@ -330,7 +331,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/26/io/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/15/io/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Javi">
@@ -347,7 +348,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">IO流
 
               
             
@@ -356,6 +357,10 @@
 
         <div class="post-meta">
 		
+		  
+			  <i class="fa fa-thumb-tack"></i>
+			  <font style="color:#999">置顶</font>
+			  <span class="post-meta-divider">|</span>
 		  
 		 
           
@@ -375,7 +380,7 @@
                 
               
 
-              <time title="创建时间：2019-06-26 23:41:26" itemprop="dateCreated datePublished" datetime="2019-06-26T23:41:26+08:00">2019-06-26</time>
+              <time title="创建时间：2019-07-15 00:00:00 / 修改时间：23:13:34" itemprop="dateCreated datePublished" datetime="2019-07-15T00:00:00+08:00">2019-07-15</time>
             </span>
           
 
@@ -383,18 +388,23 @@
             
 
             
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-06-27 00:40:29" itemprop="dateModified" datetime="2019-06-27T00:40:29+08:00">2019-06-27</time>
-              </span>
-            
           
 
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/corejava/" itemprop="url" rel="index"><span itemprop="name">corejava</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -481,6 +491,15 @@
 
     <footer class="post-footer">
       
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/java基础/" rel="tag"># java基础</a>
+          
+        </div>
+      
 
       
       
@@ -490,8 +509,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/26/thread/" rel="next" title>
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2019/07/14/shangchuantupian/" rel="next" title="shangchuantupian">
+                <i class="fa fa-chevron-left"></i> shangchuantupian
               </a>
             
           </div>
@@ -499,10 +518,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/14/shangchuantupian/" rel="prev" title="shangchuantupian">
-                shangchuantupian <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -578,7 +593,41 @@
               
 
               
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
               
             </nav>
           
