@@ -95,18 +95,18 @@
 
 
 
-  <meta name="description" content="第七章 IO流一、流的概念 Java中流是使用统一的方式操作输入和输出的数据。 java.io包它对各种常见的输入流和输出流进行了抽象。二、流的分类   流操作的方向（参照物：当前程序） 输入流：将数据读取到程序中。 输出流：将程序中的数据写出到文件中。   类操作的最小数据单元 字节类：如果数据流中最小的数据单元是字节，那么称这种流为字节流。字节流处理单元为 1 个字节，可以操作字节和字节数组。">
+  <meta name="description" content="基于TCP的Socket编程步骤： 套接字socket：代表通信节点 实质：一种独立于协议的网络编程接口。   作用：完成两个应用程序之间的数据传输。   类型：流式套接字、数据报套接字、原始套接字。     服务器程序编写： ①调用ServerSocket(int port)创建一个服务器端套接字，并绑定到指定端口上； ②调用accept()，监听连接请求，如果客户端请求连接，则接受连接，返回通">
 <meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IO流">
-<meta property="og:url" content="http://yoursite.com/2019/07/15/io/index.html">
+<meta property="og:title" content="网络编程">
+<meta property="og:url" content="http://yoursite.com/2019/07/22/corejava_net/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="第七章 IO流一、流的概念 Java中流是使用统一的方式操作输入和输出的数据。 java.io包它对各种常见的输入流和输出流进行了抽象。二、流的分类   流操作的方向（参照物：当前程序） 输入流：将数据读取到程序中。 输出流：将程序中的数据写出到文件中。   类操作的最小数据单元 字节类：如果数据流中最小的数据单元是字节，那么称这种流为字节流。字节流处理单元为 1 个字节，可以操作字节和字节数组。">
+<meta property="og:description" content="基于TCP的Socket编程步骤： 套接字socket：代表通信节点 实质：一种独立于协议的网络编程接口。   作用：完成两个应用程序之间的数据传输。   类型：流式套接字、数据报套接字、原始套接字。     服务器程序编写： ①调用ServerSocket(int port)创建一个服务器端套接字，并绑定到指定端口上； ②调用accept()，监听连接请求，如果客户端请求连接，则接受连接，返回通">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-15T15:13:34.204Z">
+<meta property="og:updated_time" content="2019-07-22T15:18:51.485Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IO流">
-<meta name="twitter:description" content="第七章 IO流一、流的概念 Java中流是使用统一的方式操作输入和输出的数据。 java.io包它对各种常见的输入流和输出流进行了抽象。二、流的分类   流操作的方向（参照物：当前程序） 输入流：将数据读取到程序中。 输出流：将程序中的数据写出到文件中。   类操作的最小数据单元 字节类：如果数据流中最小的数据单元是字节，那么称这种流为字节流。字节流处理单元为 1 个字节，可以操作字节和字节数组。">
+<meta name="twitter:title" content="网络编程">
+<meta name="twitter:description" content="基于TCP的Socket编程步骤： 套接字socket：代表通信节点 实质：一种独立于协议的网络编程接口。   作用：完成两个应用程序之间的数据传输。   类型：流式套接字、数据报套接字、原始套接字。     服务器程序编写： ①调用ServerSocket(int port)创建一个服务器端套接字，并绑定到指定端口上； ②调用accept()，监听连接请求，如果客户端请求连接，则接受连接，返回通">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/15/io/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/22/corejava_net/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>IO流 | Hexo</title>
+  <title>网络编程 | Hexo</title>
   
 
 
@@ -331,7 +331,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/15/io/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/22/corejava_net/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Javi">
@@ -348,7 +348,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">IO流
+          <h1 class="post-title" itemprop="name headline">网络编程
 
               
             
@@ -380,7 +380,7 @@
                 
               
 
-              <time title="创建时间：2019-07-15 00:00:00 / 修改时间：23:13:34" itemprop="dateCreated datePublished" datetime="2019-07-15T00:00:00+08:00">2019-07-15</time>
+              <time title="创建时间：2019-07-22 22:41:59 / 修改时间：23:18:51" itemprop="dateCreated datePublished" datetime="2019-07-22T22:41:59+08:00">2019-07-22</time>
             </span>
           
 
@@ -439,33 +439,78 @@
       
 
       
-        <h1 id="第七章-IO流"><a href="#第七章-IO流" class="headerlink" title="第七章 IO流"></a>第七章 IO流</h1><h2 id="一、流的概念"><a href="#一、流的概念" class="headerlink" title="一、流的概念"></a>一、流的概念</h2><ul>
-<li>Java中流是使用统一的方式操作输入和输出的数据。</li>
-<li>java.io包它对各种常见的输入流和输出流进行了抽象。<h2 id="二、流的分类"><a href="#二、流的分类" class="headerlink" title="二、流的分类"></a>二、流的分类</h2></li>
+        <h2 id="基于TCP的Socket编程步骤："><a href="#基于TCP的Socket编程步骤：" class="headerlink" title="基于TCP的Socket编程步骤："></a>基于TCP的Socket编程步骤：</h2><ul>
+<li>套接字socket：代表通信节点<ul>
+<li>实质：一种独立于协议的网络编程接口。</li>
+</ul>
+<ul>
+<li>作用：完成两个应用程序之间的数据传输。</li>
+</ul>
+<ul>
+<li>类型：流式套接字、数据报套接字、原始套接字。</li>
+</ul>
+</li>
 </ul>
 <ol>
-<li>流操作的方向（参照物：当前程序）<ul>
-<li><strong>输入流</strong>：将数据读取到程序中。</li>
-<li><strong>输出流</strong>：将程序中的数据写出到文件中。</li>
+<li><strong>服务器程序编写：</strong><ul>
+<li>①调用ServerSocket(int port)创建一个服务器端套接字，并绑定到指定端口上；</li>
+<li>②调用accept()，监听连接请求，如果客户端请求连接，则接受连接，返回通信套接字；</li>
+<li>③调用Socket类的getInputStream和getOutputStream()获取输入流和输出流，开始网络数据的接收和发送；</li>
+<li>④最后关闭通信套接字。</li>
 </ul>
 </li>
-<li>类操作的最小数据单元<ul>
-<li><strong>字节类</strong>：如果数据流中最小的数据单元是字节，那么称这种流为字节流。字节流处理单元为 1 个字节，可以操作字节和字节数组。</li>
-<li><strong>字符类</strong>：如果数据流中最小的数据单元是字符，那么称这种流为字符流。字符流处理的单元为 2 个字节的 Unicode 字符，可以操作字符、字符数组或字符串。Java内用Unicode 编码存储字符,字符流处理类负责将外部的其他编码的字符流和java内Unicode 字符流之间的转换。字符流（一次可以处理一个缓冲区）一次操作比字节流（一次一个字节）效率高。</li>
+<li><strong>客户端程序编写：</strong><ul>
+<li>①调用Socket()创建一个流套接字，并连接到服务器端； </li>
+<li>②调用Socket类的getOutputStream()和getInputStream获取输出流和输入流，开始网络数据的发送和接收； </li>
+<li>③最后关闭通信套接字。</li>
 </ul>
 </li>
-<li>流的角色<ul>
-<li><strong>字节流</strong>：处理实际数据源，上述四种都是属于字节流。如<em>FileInputStream</em>。</li>
-<li><strong>处理流/包装流</strong>:处理包装的流。如<em>BufferedInputStream</em>。<h2 id="三、几种重要的流"><a href="#三、几种重要的流" class="headerlink" title="三、几种重要的流"></a>三、几种重要的流</h2>FileInputStream fis = null;<br>FileOutputStream fos = null;</li>
-</ul>
-</li>
-<li>所有字节输入流和字节输出流的父类：<ul>
-<li>java.io.InputStream</li>
-<li>java.io.OutputStream</li>
-</ul>
-</li>
-<li>文件字节流:<br> FileInputStream fis = null;<br> FileOutputStream fos = null;</li>
 </ol>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//基于TCP协议的服务端</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TcpServer</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		ServerSocket ss = <span class="keyword">null</span>;  <span class="comment">//声明</span></span><br><span class="line">		BufferedReader br = <span class="keyword">null</span>;</span><br><span class="line">		PrintWriter pw = <span class="keyword">null</span>;</span><br><span class="line">		Socket socket = <span class="keyword">null</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="comment">//1.创建ServerSocket对象</span></span><br><span class="line">			ss = <span class="keyword">new</span> ServerSocket(<span class="number">9999</span>);</span><br><span class="line">			System.out.println(<span class="string">"服务器端已经在9999端口启动！"</span>);</span><br><span class="line">			<span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">				<span class="comment">//2.监听连接请求，等待客户端请求连接</span></span><br><span class="line">				socket = ss.accept();  <span class="comment">//阻塞作用</span></span><br><span class="line">				<span class="comment">//3.基于Socket对象读写数据</span></span><br><span class="line">				<span class="comment">//读客户端发来的数据</span></span><br><span class="line">				br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(socket.getInputStream()));</span><br><span class="line">				String msg = br.readLine();   <span class="comment">//阻塞作用</span></span><br><span class="line">				System.out.println(<span class="string">"客户端说:"</span>+msg);</span><br><span class="line">				<span class="comment">//给客户端发出数据</span></span><br><span class="line">				pw = <span class="keyword">new</span> PrintWriter(socket.getOutputStream());</span><br><span class="line">				pw.println(<span class="keyword">new</span> Date().toString());</span><br><span class="line">				pw.flush();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">			<span class="comment">//关闭资源(先开后关)</span></span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				<span class="keyword">if</span>(pw!=<span class="keyword">null</span>)	pw.close();</span><br><span class="line">				<span class="keyword">if</span>(br!=<span class="keyword">null</span>)	br.close();</span><br><span class="line">				<span class="keyword">if</span>(socket!=<span class="keyword">null</span>)	socket.close();</span><br><span class="line">				<span class="keyword">if</span>(ss!=<span class="keyword">null</span>)	ss.close();</span><br><span class="line">			&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="基于UDP的Socket编程步骤："><a href="#基于UDP的Socket编程步骤：" class="headerlink" title="基于UDP的Socket编程步骤："></a>基于UDP的Socket编程步骤：</h2><ol>
+<li><p><strong>服务器端基于UDP编程：</strong></p>
+<ul>
+<li><p>a) 调用DatagramSocket(int port)创建一个数据报套接字，并绑定到指定端口上；</p>
+</li>
+<li><p>b) 调用DatagramPacket(byte[] buf, int length)，建立一个字节数组以接收客户端的UDP包 ；</p>
+</li>
+<li><p>c) 调用DatagramSocket类的receive()，接收客户端的UDP包并放在上一步创建的数据包中；通过调用DatagramPacket的getData获取数据。</p>
+</li>
+<li><p>d) 创建数据包，用来存放发送给客户端响应数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int port = dp.getPort();</span><br><span class="line">InetAddress address=dp.getAddress();</span><br><span class="line">String msg=new Date().toString();</span><br><span class="line">buf=msg.getBytes();</span><br><span class="line">DatagramPacket dp1=new DatagramPacket(buf,buf.length,address,port);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>e) 向客户端发送数据包DatagramSocket.send(DatagramPacket)</p>
+</li>
+<li><p>f) 最后关闭数据报套接字。</p>
+</li>
+<li><p>其中第四，五是选择性的。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>客户端程序编写：</strong></p>
+<ul>
+<li><p>a) 调用DatagramSocket()创建一个数据报套接字。 </p>
+</li>
+<li><p>b) 调用DatagramPacket(byte[] buf, int length, InetAddress address, int port)，建立要发送的UDP包；<br>  包含发给服务器的数据，服务器地址，服务器的端口。</p>
+</li>
+<li><p>c) 调用DatagramSocket类的send(dp)，发送UDP包；</p>
+</li>
+<li><p>d) 创建数据包，用来存放服务器端返回响应数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DatagramPacket dp1=new DatagramPacket(buf,buf.length);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>e) 接收服务器端响应数据ds.receive(dp1);</p>
+</li>
+<li><p>f) 最后关闭数据报套接字。</p>
+</li>
+<li><p>其中第四，五是选择性的。</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
 
       
     </div>
@@ -509,8 +554,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/14/shangchuantupian/" rel="next" title="shangchuantupian">
-                <i class="fa fa-chevron-left"></i> shangchuantupian
+              <a href="/2019/07/15/io/" rel="next" title="IO流">
+                <i class="fa fa-chevron-left"></i> IO流
               </a>
             
           </div>
@@ -518,10 +563,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/22/corejava_net/" rel="prev" title="网络编程">
-                网络编程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -662,7 +703,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第七章-IO流"><span class="nav-text">第七章 IO流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、流的概念"><span class="nav-text">一、流的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、流的分类"><span class="nav-text">二、流的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、几种重要的流"><span class="nav-text">三、几种重要的流</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于TCP的Socket编程步骤："><span class="nav-text">基于TCP的Socket编程步骤：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于UDP的Socket编程步骤："><span class="nav-text">基于UDP的Socket编程步骤：</span></a></li></ol></div>
             
 
           </div>
